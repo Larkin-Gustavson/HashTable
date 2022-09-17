@@ -161,7 +161,7 @@ public class HashTable<TKey, TValue> {
 
             numberOfEntries++;
 
-            writeToFile(key, value, FileWritingOptions.PUT);
+            writeToFile(key, value, FileWritingOption.PUT);
 
             return;
         }
@@ -174,7 +174,7 @@ public class HashTable<TKey, TValue> {
 
         numberOfEntries++;
 
-        writeToFile(key, value, FileWritingOptions.PUT);
+        writeToFile(key, value, FileWritingOption.PUT);
     }
 
     /**
@@ -197,7 +197,7 @@ public class HashTable<TKey, TValue> {
 
             numberOfEntries++;
 
-            writeToFile(key, value, FileWritingOptions.PUT);
+            writeToFile(key, value, FileWritingOption.PUT);
 
             return;
         }
@@ -215,7 +215,7 @@ public class HashTable<TKey, TValue> {
 
         numberOfEntries++;
 
-        writeToFile(key, value, FileWritingOptions.PUT);
+        writeToFile(key, value, FileWritingOption.PUT);
     }
 
     /**
@@ -636,14 +636,14 @@ public class HashTable<TKey, TValue> {
      * @param value  The value to be logged.
      * @param option The type of information to be logged.
      */
-    private void writeToFile(TKey key, TValue value, FileWritingOptions option) {
+    private void writeToFile(TKey key, TValue value, FileWritingOption option) {
         LocalDateTime currentDateAndTime = LocalDateTime.now();
         DateTimeFormatter dateTimeFormatter = DateTimeFormatter.ofPattern("hh:mm a MM/dd/yyyy");
 
         File logFile = new File("log.txt");
 
         try (BufferedWriter writer = new BufferedWriter(new FileWriter(logFile, true))) {
-            if (option.equals(FileWritingOptions.PUT)) {
+            if (option.equals(FileWritingOption.PUT)) {
                 writer.write("At " + currentDateAndTime.format(dateTimeFormatter) + " Time Zone = " + ZoneId.systemDefault()
                              + ", the key of " + key + " and the value of " + value + " was added at index " + indexOf(key));
                 writer.newLine();
@@ -717,7 +717,7 @@ public class HashTable<TKey, TValue> {
     /**
      * A private enum to describe what type of operation performed on the Hash Table will be logged to a text file.
      */
-    private enum FileWritingOptions {
+    private enum FileWritingOption {
         /**
          * An enumeration constant to describe the put (or add) operation performed on a Hash Table.
          */
