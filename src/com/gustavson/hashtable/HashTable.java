@@ -35,7 +35,6 @@ import java.util.Arrays;
  * @param <TValue> The type of Values to be stored.
  */
 public class HashTable<TKey, TValue> {
-
     /**
      * A private static final field to represent the default capacity of the Hash Table.
      *
