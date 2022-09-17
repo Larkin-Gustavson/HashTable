@@ -181,7 +181,7 @@ public class HashTable<TKey, TValue> {
      * A method to add an entry into the Hash table.
      * <strong>Note</strong> that if a collision occurs, the newest colliding entry will be put to the end of the chain.
      * As such, this method will take longer to execute because it needs to traverse to the end of the list
-     * to get the end of the list and then insert that element in that position.
+     * and then insert that element in that position.
      * The put method should be preferred, as it will be faster.
      *
      * @param key   The desired Key to map a piece of Data to.
