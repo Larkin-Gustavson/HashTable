@@ -152,7 +152,7 @@ public class HashTable<TKey, TValue> {
      * @param value The desired Data to be stored in a Key - Value Pair.
      */
     public void put(TKey key, TValue value) {
-        int index = getHashCode(key);
+        int index = getInsertIndex(key);
 
         Entry<TKey, TValue> newNode = new Entry<>(key, value);
 
@@ -188,7 +188,7 @@ public class HashTable<TKey, TValue> {
      * @param value The desired Data to be stored in a Key - Value Pair.
      */
     public void putLast(TKey key, TValue value) {
-        int index = getHashCode(key);
+        int index = getInsertIndex(key);
 
         Entry<TKey, TValue> newNode = new Entry<>(key, value);
 
@@ -245,7 +245,7 @@ public class HashTable<TKey, TValue> {
             return null;
         }
 
-        int index = getHashCode(key);
+        int index = getInsertIndex(key);
 
         Entry<TKey, TValue> current = table[index];
 
@@ -311,7 +311,7 @@ public class HashTable<TKey, TValue> {
      * @param key The desired key to look through.
      */
     public void printItemsInBucket(TKey key) {
-        int index = getHashCode(key);
+        int index = getInsertIndex(key);
 
         if (isEmpty()) {
             return;
@@ -360,7 +360,7 @@ public class HashTable<TKey, TValue> {
             throw new NullPointerException("The Hash Table is empty.");
         }
 
-        int index = getHashCode(key);
+        int index = getInsertIndex(key);
 
         if (table[index].getKey().equals(key) && table[index].getKey().hashCode() == key.hashCode()) {
             return table[index];
@@ -392,7 +392,7 @@ public class HashTable<TKey, TValue> {
             return false;
         }
 
-        int index = getHashCode(key);
+        int index = getInsertIndex(key);
 
         Entry<TKey, TValue> current = table[index];
 
@@ -444,7 +444,7 @@ public class HashTable<TKey, TValue> {
             return;
         }
 
-        int index = getHashCode(key);
+        int index = getInsertIndex(key);
 
         Entry<TKey, TValue> current = table[index];
 
@@ -480,7 +480,7 @@ public class HashTable<TKey, TValue> {
             return;
         }
 
-        int index = getHashCode(key);
+        int index = getInsertIndex(key);
 
         Entry<TKey, TValue> current = table[index];
 
@@ -515,7 +515,7 @@ public class HashTable<TKey, TValue> {
             return;
         }
 
-        int index = getHashCode(key);
+        int index = getInsertIndex(key);
 
         Entry<TKey, TValue> current = table[index];
 
@@ -550,7 +550,7 @@ public class HashTable<TKey, TValue> {
             return;
         }
 
-        int index = getHashCode(key);
+        int index = getInsertIndex(key);
 
         Entry<TKey, TValue> current = table[index];
 
@@ -574,7 +574,7 @@ public class HashTable<TKey, TValue> {
             throw new IllegalArgumentException("The Hash Table is empty.");
         }
 
-        return getHashCode(key);
+        return getInsertIndex(key);
     }
 
     /**
@@ -603,7 +603,7 @@ public class HashTable<TKey, TValue> {
             return;
         }
 
-        int index = getHashCode(key);
+        int index = getInsertIndex(key);
 
         numberOfEntries = numberOfEntries - getNumberOfEntriesInBucket(index);
 
@@ -654,12 +654,12 @@ public class HashTable<TKey, TValue> {
     }
 
     /**
-     * A private method to retrieve the hash code of a key.
+     * A private method to retrieve the index of where a key should be mapped to in the Hash Table.
      *
      * @param key The desired Key to be mapped into the Hash Table.
-     * @return The hash code (as an integer) of where the key will be mapped to within the Hash Table.
+     * @return The index (as an integer) of where the key will be mapped to within the Hash Table.
      */
-    private int getHashCode(TKey key) {
+    private int getInsertIndex(TKey key) {
         return Math.abs(key.hashCode() % capacity);
     }
 

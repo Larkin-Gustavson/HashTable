@@ -60,6 +60,5 @@ public class Main {
         System.out.println(uranusMoons);
         System.out.println(neptuneMoons);
         System.out.println(plutoMoons);
-
     }
 }

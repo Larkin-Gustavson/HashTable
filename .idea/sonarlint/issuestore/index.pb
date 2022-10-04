@@ -1,19 +1,3 @@
 
 W
 'src/com/gustavson/planet/Constants.java,b\c\bc6b3902c0cc1a5433ae1ba36f5c0a325283f171
-V
-&src/com/gustavson/hashtable/Entry.java,f\7\f769053e8dd744c4758ba8e8fced252b9b7f3c8b
-T
-$src/com/gustavson/planet/Planet.java,9\c\9c2db52f732182b69d30fdd2357a79cf5d80c3bc
-R
-"src/com/gustavson/planet/Moon.java,0\9\09e80a54bab96d980c89887bf50811ca77d73086
-T
-$src/com/gustavson/person/Person.java,4\8\483c67a79e7ae0b5c2f575b176ddd51f31574ea2
-T
-$src/com/gustavson/person/Gender.java,3\9\39981b4a926f7d36e5205668751541a80b886c7a
-7
-log.txt,8\9\89dbeb08d7aa865d748d706c1d17ee94f6f82ba7
-Z
-*src/com/gustavson/hashtable/HashTable.java,1\5\15f0a254b8eca03a15bc68ab61296f7ea5f7e8e2
-K
-src/com/gustavson/Main.java,2\8\28655401cf7a3a64323662459a02aa86d68caf1a
