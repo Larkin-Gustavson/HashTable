@@ -655,7 +655,7 @@ public class HashTable<TKey, TValue> {
 
     /**
      * A private method to serve as the hash function. A hash functions purpose is to retrieve the index of
-     * where a key should be mapped to in the Hash Table.
+     * where a key should be mapped to in the Hash Table, based on its hash code (defined by the {@link Object hashCode} method).
      *
      * @param key The desired Key to be mapped into the Hash Table.
      * @return The index (as an integer) of where the key will be mapped to within the Hash Table.
