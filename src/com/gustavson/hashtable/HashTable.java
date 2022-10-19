@@ -658,7 +658,7 @@ public class HashTable<TKey, TValue> {
      * where a key should be mapped to in the Hash Table, based on its hash code (defined by the {@link Object hashCode} method).
      *
      * @param key The desired Key to be mapped into the Hash Table.
-     * @return The index (as an integer) of where the key will be mapped to within the Hash Table.
+     * @return The index (as a positive integer) of where the key will be mapped to within the Hash Table.
      */
     private int getBucketIndex(TKey key) {
         return Math.abs(key.hashCode() % capacity);
